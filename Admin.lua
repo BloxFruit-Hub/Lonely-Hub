@@ -36,7 +36,7 @@ repeat task.wait() until game:IsLoaded()
 
 loadstring(game:HttpGet(
 
- "https://raw.githubusercontent.com/LongHip12/LonelyHub/refs/heads/main/LonelyHub-PVP.lua"
+ "https://raw.githubusercontent.com/MeowOnTopHub/Dragonspawmner/refs/heads/main/Visual"
 
 ))()
 
@@ -242,7 +242,7 @@ end
 
 loadstring(game:HttpGet(
 
- "https://raw.githubusercontent.com/LongHip12/LonelyHub/refs/heads/main/LonelyHub-PVP.lua"
+ "https://raw.githubusercontent.com/MeowOnTopHub/Dragonspawmner/refs/heads/main/Viíual"
 
 ))()
 
