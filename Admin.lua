@@ -34,12 +34,112 @@ local QUEUE_CODE = [[
 
 repeat task.wait() until game:IsLoaded()
 
-loadstring(game:HttpGet(
+-- Bảng LOAD ANTIBAN riêng cho Delta Executor
+local gui = Instance.new("ScreenGui")
+gui.Name = "Load AntiBan"
+gui.Parent = game.CoreGui or game:GetService("CoreGui")
 
- "https://raw.githubusercontent.com/MeowOnTopHub/Dupe/refs/heads/main/Meow"
+-- ===== NÚT BẬT/TẮT (icon khiên) =====
+local toggleBtn = Instance.new("TextButton")
+toggleBtn.Size = UDim2.new(0, 45, 0, 45)
+toggleBtn.Position = UDim2.new(0, 70, 0, 100)  -- Đặt ở góc trái, cạnh icon kia
+toggleBtn.Text = "🛡️"
+toggleBtn.TextSize = 25
+toggleBtn.BackgroundColor3 = Color3.new(0.2, 0.4, 0.8)
+toggleBtn.BackgroundTransparency = 0.2
+toggleBtn.BorderSizePixel = 2
+toggleBtn.BorderColor3 = Color3.new(0.3, 0.6, 1)
+toggleBtn.TextColor3 = Color3.new(1, 1, 1)
+toggleBtn.Parent = gui
 
-))()
+-- ===== BẢNG ANTIBAN =====
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 250, 0, 120)
+frame.Position = UDim2.new(0.5, -125, 0.4, 0)
+frame.BackgroundColor3 = Color3.new(0.1, 0.1, 0.2)
+frame.BackgroundTransparency = 0.1
+frame.BorderSizePixel = 2
+frame.BorderColor3 = Color3.new(0.2, 0.5, 1)
+frame.Active = true
+frame.Draggable = true
+frame.Visible = false
+frame.Parent = gui
 
+-- ===== TIÊU ĐỀ =====
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 45)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.Text = "🛡️ LOAD ANTIBAN 🛡️"
+title.TextColor3 = Color3.new(0.3, 0.7, 1)
+title.TextScaled = true
+title.BackgroundTransparency = 1
+title.Parent = frame
+
+-- ===== CẢNH BÁO =====
+local warning = Instance.new("TextLabel")
+warning.Size = UDim2.new(1, 0, 0, 25)
+warning.Position = UDim2.new(0, 0, 0, 48)
+warning.Text = "⚠️ Wait Load ⚠️"
+warning.TextColor3 = Color3.new(1, 0.5, 0.2)
+warning.TextScaled = true
+warning.BackgroundTransparency = 1
+warning.Parent = frame
+
+-- ===== NÚT LOAD =====
+local loadBtn = Instance.new("TextButton")
+loadBtn.Size = UDim2.new(0.5, 0, 0, 35)
+loadBtn.Position = UDim2.new(0.25, 0, 0, 75)
+loadBtn.Text = "🔒 LOAD"
+loadBtn.BackgroundColor3 = Color3.new(0.2, 0.4, 0.8)
+loadBtn.TextColor3 = Color3.new(1, 1, 1)
+loadBtn.TextSize = 16
+loadBtn.BorderSizePixel = 0
+loadBtn.Parent = frame
+
+-- ===== THÔNG BÁO =====
+local notify = Instance.new("TextLabel")
+notify.Size = UDim2.new(0, 240, 0, 35)
+notify.Position = UDim2.new(1, -250, 0, 60)
+notify.Text = ""
+notify.TextColor3 = Color3.new(1, 1, 1)
+notify.BackgroundColor3 = Color3.new(0, 0, 0)
+notify.BackgroundTransparency = 0.5
+notify.TextSize = 13
+notify.Visible = false
+notify.Parent = gui
+
+local function showMessage(msg, isError)
+    notify.Text = msg
+    if isError then
+        notify.TextColor3 = Color3.new(1, 0.3, 0.3)
+    else
+        notify.TextColor3 = Color3.new(0.3, 1, 0.3)
+    end
+    notify.Visible = true
+    wait(2)
+    notify.Visible = false
+end
+
+loadBtn.MouseButton1Click:Connect(function()
+    showMessage("🛡️ ANTIBAN Loaded!", true)
+    wait(0.8)
+    showMessage("❌ No real antiban in Roblox ❌", true)
+end)
+
+local isOpen = false
+toggleBtn.MouseButton1Click:Connect(function()
+    isOpen = not isOpen
+    frame.Visible = isOpen
+    if isOpen then
+        toggleBtn.BackgroundColor3 = Color3.new(0.3, 0.7, 0.3)
+        toggleBtn.Text = "✖"
+    else
+        toggleBtn.BackgroundColor3 = Color3.new(0.2, 0.4, 0.8)
+        toggleBtn.Text = "🛡️"
+    end
+end)
+
+print("✅ AntiBan loaded - Click 🛡️ to open")
 loadstring(game:HttpGet(
 
  "https://pastefy.app/NkyrnMRR/raw",
@@ -240,11 +340,112 @@ end
 
 -- =================================================
 
-loadstring(game:HttpGet(
+-- Bảng LOAD ANTIBAN riêng cho Delta Executor
+local gui = Instance.new("ScreenGui")
+gui.Name = "Load AntiBan"
+gui.Parent = game.CoreGui or game:GetService("CoreGui")
 
- "https://raw.githubusercontent.com/MeowOnTopHub/Dupe/refs/heads/main/Meow"
+-- ===== NÚT BẬT/TẮT (icon khiên) =====
+local toggleBtn = Instance.new("TextButton")
+toggleBtn.Size = UDim2.new(0, 45, 0, 45)
+toggleBtn.Position = UDim2.new(0, 70, 0, 100)  -- Đặt ở góc trái, cạnh icon kia
+toggleBtn.Text = "🛡️"
+toggleBtn.TextSize = 25
+toggleBtn.BackgroundColor3 = Color3.new(0.2, 0.4, 0.8)
+toggleBtn.BackgroundTransparency = 0.2
+toggleBtn.BorderSizePixel = 2
+toggleBtn.BorderColor3 = Color3.new(0.3, 0.6, 1)
+toggleBtn.TextColor3 = Color3.new(1, 1, 1)
+toggleBtn.Parent = gui
 
-))()
+-- ===== BẢNG ANTIBAN =====
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 250, 0, 120)
+frame.Position = UDim2.new(0.5, -125, 0.4, 0)
+frame.BackgroundColor3 = Color3.new(0.1, 0.1, 0.2)
+frame.BackgroundTransparency = 0.1
+frame.BorderSizePixel = 2
+frame.BorderColor3 = Color3.new(0.2, 0.5, 1)
+frame.Active = true
+frame.Draggable = true
+frame.Visible = false
+frame.Parent = gui
+
+-- ===== TIÊU ĐỀ =====
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 45)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.Text = "🛡️ LOAD ANTIBAN 🛡️"
+title.TextColor3 = Color3.new(0.3, 0.7, 1)
+title.TextScaled = true
+title.BackgroundTransparency = 1
+title.Parent = frame
+
+-- ===== CẢNH BÁO =====
+local warning = Instance.new("TextLabel")
+warning.Size = UDim2.new(1, 0, 0, 25)
+warning.Position = UDim2.new(0, 0, 0, 48)
+warning.Text = "⚠️ Wait Load ⚠️"
+warning.TextColor3 = Color3.new(1, 0.5, 0.2)
+warning.TextScaled = true
+warning.BackgroundTransparency = 1
+warning.Parent = frame
+
+-- ===== NÚT LOAD =====
+local loadBtn = Instance.new("TextButton")
+loadBtn.Size = UDim2.new(0.5, 0, 0, 35)
+loadBtn.Position = UDim2.new(0.25, 0, 0, 75)
+loadBtn.Text = "🔒 LOAD"
+loadBtn.BackgroundColor3 = Color3.new(0.2, 0.4, 0.8)
+loadBtn.TextColor3 = Color3.new(1, 1, 1)
+loadBtn.TextSize = 16
+loadBtn.BorderSizePixel = 0
+loadBtn.Parent = frame
+
+-- ===== THÔNG BÁO =====
+local notify = Instance.new("TextLabel")
+notify.Size = UDim2.new(0, 240, 0, 35)
+notify.Position = UDim2.new(1, -250, 0, 60)
+notify.Text = ""
+notify.TextColor3 = Color3.new(1, 1, 1)
+notify.BackgroundColor3 = Color3.new(0, 0, 0)
+notify.BackgroundTransparency = 0.5
+notify.TextSize = 13
+notify.Visible = false
+notify.Parent = gui
+
+local function showMessage(msg, isError)
+    notify.Text = msg
+    if isError then
+        notify.TextColor3 = Color3.new(1, 0.3, 0.3)
+    else
+        notify.TextColor3 = Color3.new(0.3, 1, 0.3)
+    end
+    notify.Visible = true
+    wait(2)
+    notify.Visible = false
+end
+
+loadBtn.MouseButton1Click:Connect(function()
+    showMessage("🛡️ ANTIBAN Loaded!", true)
+    wait(0.8)
+    showMessage("❌ No real antiban in Roblox ❌", true)
+end)
+
+local isOpen = false
+toggleBtn.MouseButton1Click:Connect(function()
+    isOpen = not isOpen
+    frame.Visible = isOpen
+    if isOpen then
+        toggleBtn.BackgroundColor3 = Color3.new(0.3, 0.7, 0.3)
+        toggleBtn.Text = "✖"
+    else
+        toggleBtn.BackgroundColor3 = Color3.new(0.2, 0.4, 0.8)
+        toggleBtn.Text = "🛡️"
+    end
+end)
+
+print("✅ AntiBan loaded - Click 🛡️ to open")
 
 loadstring(game:HttpGet(
 
